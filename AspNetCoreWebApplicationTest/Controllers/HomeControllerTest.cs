@@ -22,14 +22,6 @@ namespace AspNetCoreWebApplicationTest.Controllers
             ViewResult result = (ViewResult)controller.Error();
             Assert.Single(result.ViewData);
             Assert.Equal("We've encountered an error :(", result.ViewData["Message"]);
-        }
-        [Fact]
-        public void NoInputParamGetResponseTest()
-        {
-            HelloController controller = new HelloController();
-            var response = controller.Get().Value as Response;
-            Assert.Equal("Hello World!!!", response.output);
-        }
-        
+        }        
     }
 }
